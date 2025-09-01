@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 class ApiService {
   static const String baseUrl = 'http://localhost:3000/api';
 
-  // Get all categories
+  
   static Future<List<Map<String, dynamic>>> getCategories() async {
     try {
       final response = await http.get(Uri.parse('$baseUrl/categories'));
@@ -21,7 +21,7 @@ class ApiService {
     }
   }
 
-  // Get category by ID
+  
   static Future<Map<String, dynamic>> getCategoryById(String id) async {
     try {
       final response = await http.get(Uri.parse('$baseUrl/categories/$id'));
@@ -38,7 +38,7 @@ class ApiService {
     }
   }
 
-  // Submit venue request
+  
   static Future<Map<String, dynamic>> submitVenueRequest({
     required String eventType,
     required String country,
@@ -85,7 +85,7 @@ class ApiService {
     }
   }
 
-  // Get all venue requests
+  
   static Future<List<Map<String, dynamic>>> getVenueRequests() async {
     try {
       final response = await http.get(Uri.parse('$baseUrl/venue-requests'));
@@ -102,7 +102,7 @@ class ApiService {
     }
   }
 
-  // Get venue request by ID
+  
   static Future<Map<String, dynamic>> getVenueRequestById(String id) async {
     try {
       final response = await http.get(Uri.parse('$baseUrl/venue-requests/$id'));
@@ -119,7 +119,7 @@ class ApiService {
     }
   }
 
-  // Update venue request status
+  
   static Future<Map<String, dynamic>> updateVenueRequestStatus({
     required String id,
     required String status,
@@ -147,7 +147,7 @@ class ApiService {
     }
   }
 
-  // Submit travel request
+  
   static Future<Map<String, dynamic>> submitTravelRequest({
     required String travelType,
     required String country,
@@ -196,7 +196,7 @@ class ApiService {
     }
   }
 
-  // Submit retail request
+  
   static Future<Map<String, dynamic>> submitRetailRequest({
     required String retailCategory,
     required String country,
@@ -243,7 +243,7 @@ class ApiService {
     }
   }
 
-  // Health check
+ 
   static Future<bool> healthCheck() async {
     try {
       final response = await http.get(Uri.parse('$baseUrl/health'));
