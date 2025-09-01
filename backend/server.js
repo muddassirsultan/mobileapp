@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// In-memory storage (replace with database in production)
+
 let venueRequests = [];
 let categories = [
   {
@@ -37,9 +37,7 @@ let categories = [
   }
 ];
 
-// Routes
 
-// Get all categories
 app.get('/api/categories', (req, res) => {
   try {
     res.json({
@@ -55,7 +53,7 @@ app.get('/api/categories', (req, res) => {
   }
 });
 
-// Get category by ID
+
 app.get('/api/categories/:id', (req, res) => {
   try {
     const category = categories.find(cat => cat.id === req.params.id);
@@ -78,7 +76,7 @@ app.get('/api/categories/:id', (req, res) => {
   }
 });
 
-// Submit venue request
+
 app.post('/api/venue-requests', (req, res) => {
   try {
     const {
@@ -95,7 +93,7 @@ app.post('/api/venue-requests', (req, res) => {
       is24HourResponse
     } = req.body;
 
-    // Validation
+    
     if (!eventType || !country || !state || !city) {
       return res.status(400).json({
         success: false,
@@ -136,7 +134,7 @@ app.post('/api/venue-requests', (req, res) => {
   }
 });
 
-// Get all venue requests
+
 app.get('/api/venue-requests', (req, res) => {
   try {
     res.json({
@@ -152,7 +150,7 @@ app.get('/api/venue-requests', (req, res) => {
   }
 });
 
-// Get venue request by ID
+
 app.get('/api/venue-requests/:id', (req, res) => {
   try {
     const request = venueRequests.find(req => req.id === req.params.id);
@@ -175,7 +173,7 @@ app.get('/api/venue-requests/:id', (req, res) => {
   }
 });
 
-// Update venue request status
+
 app.patch('/api/venue-requests/:id/status', (req, res) => {
   try {
     const { status } = req.body;
@@ -214,7 +212,7 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Error handling middleware
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({
@@ -224,7 +222,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-// 404 handler
+
 app.use('*', (req, res) => {
   res.status(404).json({
     success: false,
@@ -232,7 +230,7 @@ app.use('*', (req, res) => {
   });
 });
 
-// Start server
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(`API endpoints available at http://localhost:${PORT}/api`);
