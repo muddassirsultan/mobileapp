@@ -10,19 +10,19 @@ class AppProvider extends ChangeNotifier {
   String _selectedCurrency = 'INR';
   bool _is24HourResponse = false;
   
-  // Travel & Stay fields
+  
   String _selectedTravelType = 'Business Trip';
   String _selectedAccommodationType = 'Hotel';
   String _selectedTravelClass = 'Economy';
   String _selectedTravelCity = 'Delhi';
   
-  // Retail fields
+  
   String _selectedRetailCategory = 'Electronics';
   String _selectedBrandPreference = 'Any Brand';
   String _selectedQualityPreference = 'Standard';
   String _selectedRetailCity = 'Delhi';
   
-  // Getters
+
   String get selectedEventType => _selectedEventType;
   String get selectedCountry => _selectedCountry;
   String get selectedState => _selectedState;
@@ -32,19 +32,19 @@ class AppProvider extends ChangeNotifier {
   String get selectedCurrency => _selectedCurrency;
   bool get is24HourResponse => _is24HourResponse;
   
-  // Travel & Stay getters
+ 
   String get selectedTravelType => _selectedTravelType;
   String get selectedAccommodationType => _selectedAccommodationType;
   String get selectedTravelClass => _selectedTravelClass;
   String get selectedTravelCity => _selectedTravelCity;
   
-  // Retail getters
+  
   String get selectedRetailCategory => _selectedRetailCategory;
   String get selectedBrandPreference => _selectedBrandPreference;
   String get selectedQualityPreference => _selectedQualityPreference;
   String get selectedRetailCity => _selectedRetailCity;
 
-  // Setters
+ 
   void setEventType(String value) {
     _selectedEventType = value;
     notifyListeners();
@@ -85,7 +85,7 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
   
-  // Travel & Stay setters
+  
   void setTravelType(String value) {
     _selectedTravelType = value;
     notifyListeners();
@@ -106,7 +106,7 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
   
-  // Retail setters
+  
   void setRetailCategory(String value) {
     _selectedRetailCategory = value;
     notifyListeners();
